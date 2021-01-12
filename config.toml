@@ -1,0 +1,11 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "🌯 Burritalks"
+
+[taxonomies]
+  tag = "tags"
+  speaker = "speakers"
+
+[params]
+  description = "Burritalks is a list of hand picked talks about the software development, domain driven design, agile, constraint theory, and more!"
+  images = ["/images/logo.png"]

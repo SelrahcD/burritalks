@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+
+<div class="mt-10 max-w-max lg:max-w-5xl mx-auto lg:mb-10 relative flex">
+    <div class="relative bg-white z-10 pb-8 md:pb-28 xl:pb-32 lg:h-96">
+        <svg class="hidden md:block absolute right-0 inset-y-0 h-full w-48 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+        <div class="relative z-20">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                <span class="text-red-600 xl:inline">Burri</span><span class="xl:inline">talks</span> 🌶
+            </h1>
+            <p class="text-lg text-gray-500 mt-3 sm:mt-5 sm:max-w-xl sm:mx-auto md:mt-5 md:text-2xl lg:mx-0">
+                Life is too short to watch boring talks!
+            </p>
+
+            <p class="mt-3 sm:mt-5 md:max-w-xs lg:max-w-lg">
+                I've watched and continue watching a lot of talks as I believe tech people can learn forever.
+            </p>
+
+            <p class="mt-1 md:max-w-2xs lg:max-w-lg">
+                Here is a curated collection of talks about development, agile, lean, continuous delivery, organization improvements.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="hidden md:block lg:inset-y-0 lg:right-0 lg:w-1/2">
+
+        <img class="h-56 lg:w-full object-cover object-right-bottom sm:h-72 md:h-96 pb-0"
+             src="/images/home-presentation.jpeg" alt="Someone presenting something on stage" width="512" height="384">
+    </div>
+</div>
+
+<h2 class="text-2xl mb-4 text-red-600 font-bold">Last added talks</h2>
+
+    {{- $talks := first 3 (where .Site.RegularPages "Section" "talks") -}}
+    {{ partial "partials/talk_card_list.html" $talks }}
+
+{{ end }}

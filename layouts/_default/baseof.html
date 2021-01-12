@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
+
+    <title>{{ block "title" . }}
+        {{ .Site.Title }}
+        {{ end }}</title>
+
+
+    {{ $styles := resources.Get "css/styles.css" }}
+
+    {{ $styles = $styles | resources.PostCSS (dict "inlineImports" true) }}
+
+    {{ if hugo.IsProduction }}
+    {{ $styles = $styles | minify }}
+    {{ end }}
+
+    <link href="{{ $styles.Permalink }}" rel="stylesheet" />
+</head>
+<body class="flex flex-col h-full">
+    <div class="border-t-4 border-red-600"></div>
+
+    <div class="container mx-auto ">
+        <div class="flex items-center border-b-4 border-gray-100 py-6 justify-start space-x-10 px-3 md:px-0">
+            <div class="tracking-tight">
+                <a href="/">
+                    <div class="font-extrabold text-xl tracking-tight hover:text-red-600 focus:text-red-600 transition-colors duration-200 ease-out">
+                        🌯 <span class="text-red-600">Burri</span><span>talks</span>
+                    </div>
+                </a>
+            </div>
+
+            <nav>
+                <a href="/talks" class="text-lg font-semibold transition-color duration-500 ease-out hover:text-red-600 focus:text-red-600 border-b-4 border-transparent hover:border-red-600 focus:border-red-600 pb-7 mr-10">All talks</a>
+                <a href="/tags" class="text-lg font-semibold transition-color duration-500 ease-out hover:text-red-600 focus:text-red-600 border-b-4 border-transparent hover:border-red-600 focus:border-red-600 pb-7 mr-10">Tags</a>
+                <a href="/speakers" class="text-lg font-semibold transition-color duration-500 ease-out hover:text-red-600 focus:text-red-600 border-b-4 border-transparent hover:border-red-600 focus:border-red-600 pb-7 mr-10">Speakers</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="flex-1 mx-auto p-8 container">
+        {{ block "main" . }}
+        {{ end }}
+    </div>
+    <div class="w-full text-center py-6 bg-red-600 text-xs text-white">
+        <div>This website is curated by <a href="http://blog.chorip.am" class="font-bold">SelrahcD</a></div>
+        <div>Homepage picture by <a href="https://unsplash.com/@xteemu?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" class="font-semibold">Teemu Paananen</a></div>
+    </div>
+
+</body>
+</html>

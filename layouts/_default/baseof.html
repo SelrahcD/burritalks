@@ -15,7 +15,7 @@
 
     {{ $styles = $styles | resources.PostCSS (dict "inlineImports" true) }}
 
-    {{ if hugo.IsProduction }}
+    {{ if eq hugo.Environment "production" }}
     {{ $styles = $styles | minify }}
     {{ end }}
 

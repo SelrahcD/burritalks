@@ -3,7 +3,9 @@ title: Nothing is something
 speakers: [Sandy Metz]
 duration: 36min
 youtube: OMPfEXIlTVE
+link: https://www.youtube.com/watch?v=OMPfEXIlTVE&ab_channel=Confreaks
 draft: false
+date: 2021-01-14T10:55:15Z
 tags:
 - OOP
 - Development

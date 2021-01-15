@@ -5,9 +5,8 @@
 {{ .Content }}
 
 <div class="lg:flex max-w-max lg:space-x-4">
-
     <ul>
-        {{ range .Pages }}
+        {{ range (sort .Pages.ByTitle) }}
         <li>
             <a href="{{ .Permalink }}" class="inline-block pb-1 border-b-4 border-transparent hover:border-red-500 focus:border-red-500 transition-color duration-500 ease-out"> {{ .Title }} </a>
         </li>

@@ -3,6 +3,8 @@ const nunjucks = require('nunjucks');
 const getYouTubeID = require('get-youtube-id');
 const fs = require('fs');
 const http = require('https');
+const superagent = require('superagent');
+
 
 const promptQuestions = [
     {
@@ -19,6 +21,11 @@ const promptQuestions = [
         type: 'list',
         name: 'speakers',
         message: 'Who are the speakers?'
+    },
+    {
+        type: 'input',
+        name: 'duration',
+        message: 'How long it is in minutes ?'
     },
     {
         type: 'autocomplete',
@@ -45,13 +52,18 @@ const INDEX_MD_TEMPLATE =
 title: "{{ title }}"
 date: {{ date }}
 speakers: [{{ speakers | join(", ") }}]
-duration: 45min
-draft: true
+duration: {{ duration }}min
+draft: false
 link: {{ url }}
+{% if youtube -%}
 youtube: {{ youtube }}
+{% endif -%}
+{% if vimeo -%}
+vimeo: {{ vimeo }}
+{% endif -%}
 tags:
 {% for tag in tags %}- {{ tag }}
-{% endfor %}
+{% endfor -%}
 ---
 `;
 
@@ -67,6 +79,10 @@ const completeTalkData = function(talkData) {
 
     if (/youtube/.test(talkData.url)) {
         calculatedData.youtube = getYouTubeID(talkData.url)
+    }
+
+    if (/vimeo/.test(talkData.url)) {
+        calculatedData.vimeo = talkData.url.match(/vimeo.com\/([0-9]+)/)[1]
     }
 
     return {...talkData, ...calculatedData}
@@ -86,13 +102,25 @@ const createIndexMd = function(dirPath, indexMd) {
 
 const downloadPreview = function (dirPath, talkData) {
 
-    if (talkData.youtube) {
+    const download = (url) => http.get(url, (response) => {
         const file = fs.createWriteStream(dirPath + '/cover.jpg');
+        response.pipe(file);
+    });
 
-        const request = http.get('https://img.youtube.com/vi/' + talkData.youtube + '/0.jpg', function (response) {
-            response.pipe(file);
-        });
+    if (talkData.youtube) {
+
+        download('https://img.youtube.com/vi/' + talkData.youtube + '/0.jpg')
     }
+
+    if(talkData.vimeo) {
+        superagent.get('https://vimeo.com/api/v2/video/' + talkData.vimeo + '.json')
+            .then(res => {
+                return res.body[0].thumbnail_large;
+            })
+            .then(download)
+    }
+
+
 }
 
 const fromData = function(dataAsString) {
@@ -134,8 +162,8 @@ export async function cli(args) {
 
     const dirPath = getDirectoryPath(talkData.speakers, talkData.title);
 
-    createIndexMd(dirPath, indexMDContent);
-
     downloadPreview(dirPath, talkData);
+
+    createIndexMd(dirPath, indexMDContent);
 }
 

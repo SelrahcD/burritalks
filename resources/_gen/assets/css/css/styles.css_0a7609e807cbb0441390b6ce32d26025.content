@@ -546,6 +546,10 @@ video {
   height: auto;
 }
 
+p {
+  margin-bottom: 0.75rem;
+}
+
 .container {
   width: 100%;
 }

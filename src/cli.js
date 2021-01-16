@@ -96,8 +96,11 @@ const getDirectoryPath = function (speakers, title) {
         .toLowerCase();
 }
 
-const createIndexMd = function(dirPath, indexMd) {
+const createDir = function(dirPath) {
     fs.mkdir(dirPath, { recursive: true }, error => {if (error) throw error});
+}
+
+const createIndexMd = function(dirPath, indexMd) {
     fs.writeFileSync(dirPath + '/index.md', indexMd);
 }
 
@@ -162,6 +165,8 @@ export async function cli(args) {
     const indexMDContent = generateIndexMd(talkData);
 
     const dirPath = getDirectoryPath(talkData.speakers, talkData.title);
+
+    createDir(dirPath);
 
     downloadPreview(dirPath, talkData);
 

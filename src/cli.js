@@ -34,6 +34,7 @@ const promptQuestions = [
         message: 'What tags should we use?',
         choices: [
             'Agile',
+            'API',
             'Architecture',
             'DDD',
             'Development',
@@ -44,6 +45,7 @@ const promptQuestions = [
             'OOP',
             'Organization improvement',
             'PHP',
+            'Rest',
         ]
     }
 ];

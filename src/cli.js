@@ -36,6 +36,7 @@ const promptQuestions = [
             'Agile',
             'API',
             'Architecture',
+            'BDD',
             'DDD',
             'Development',
             'Elixir',

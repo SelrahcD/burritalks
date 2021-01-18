@@ -29,7 +29,7 @@
                 {{ range .Params.Tags }}
 
                 {{ $tag := . }}
-                {{ with site.GetPage (printf "/%s/%s" "tags" $tag) }}
+                {{ with site.GetPage (printf "/%s/%s" "tags" (urlize $tag)) }}
                 <a href="{{ .Permalink }}" class="inline-block bg-red-200 font-medium rounded-lg px-2 py-1 text-gray-700 text-xs hover:bg-red-500 hover:text-white focus:bg-red-500 focus:text-white transition-color duration-500 ease-out">{{ $tag }}</a>
                 {{ end }}
 

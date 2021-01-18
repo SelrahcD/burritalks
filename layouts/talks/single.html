@@ -9,31 +9,40 @@
 
 
 <div class="container mx-auto">
-    <div class="mb-10">
-        <div class="mb-3 flex items-center">
-            <h1 class="text-4xl inline mr-3 font-serif">{{ .Title }}</h1>
-            <span class="text-gray-700 font-medium text-xs tracking-wide px-2 py-1 mt-2 align-middle">
-                <svg class="h-5 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {{ .Params.Duration }}
-            </span>
-        </div>
+    <div class="mb-10 flex flex-col lg:flex-row">
+        <div class="flex flex-col">
+            <div class="mb-3 flex items-center">
+                <h1 class="text-4xl inline mr-3 font-serif">{{ .Title }}</h1>
+            </div>
 
-        {{ range .Params.Speakers }}
-        <a href="{{ "/speakers/" | relLangURL }}{{ . | urlize }}" class="inline-block text-lg text-gray-700 border-b-4 border-transparent hover:border-red-500 focus:border-red-500 transition-color duration-500 ease-out">{{ . }}</a>
-        {{ end }}
+            <ul>
+                {{ range .Params.Speakers }}
+                <li>
+                    <a href="{{ "/speakers/" | relLangURL }}{{ . | urlize }}" class="inline-block text-lg text-gray-700
+                    border-b-4 border-transparent hover:border-red-500 focus:border-red-500 transition-color
+                    duration-500 ease-out">{{ . }}</a>
+                </li>
+                {{ end }}
+            </ul>
 
-        <div class="mt-2">
-            {{ range .Params.Tags }}
+            <div class="mt-2">
+                {{ range .Params.Tags }}
 
                 {{ $tag := . }}
                 {{ with site.GetPage (printf "/%s/%s" "tags" $tag) }}
                 <a href="{{ .Permalink }}" class="inline-block bg-red-200 font-medium rounded-lg px-2 py-1 text-gray-700 text-xs hover:bg-red-500 hover:text-white focus:bg-red-500 focus:text-white transition-color duration-500 ease-out">{{ $tag }}</a>
                 {{ end }}
 
-            {{ end }}
+                {{ end }}
+            </div>
         </div>
+
+        <span class="text-gray-700 font-medium text-xs tracking-wide py-1 mt-2 align-middle">
+                <svg class="h-5 inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                {{ .Params.Duration }}
+        </span>
     </div>
 
     <div class="mb-5">
@@ -47,10 +56,10 @@
         </div>
         {{ else if .Params.link }}
         <div class="relative">
-            <img src="{{ $cover.Permalink }}" class="lg:w-1/2 mx-auto">
-            <div class="absolute top-1/4 md:top-1/2 right-1/4 w-1/2 text-center">
+            <img src="{{ $cover.Permalink }}" class="w-full lg:w-1/2 h-60 md:h-auto mx-auto">
+            <div class="absolute top-1/4 md:top-1/2 lg:right-1/4 w-full lg:w-1/2 text-center">
                 <p class="bg-white mb-4 text-center rounded-lg py-2 shadow-lg text-gray-700">Unfortunately, we couldn't embed this talk but you can watch it directly at its original place.</p>
-                <a href="{{ .Params.link }}" class="inline-block mx-auto  bg-red-500 hover:bg-red-900 rounded-lg px-4 py-2 text-white font-semibold shadow-lg transition ease-out duration-500 transform hover:-translate-y-1 hover:scale-105">
+                <a href="{{ .Params.link }}" class="inline-block mx-auto bg-red-500 hover:bg-red-900 rounded-lg px-4 py-2 text-white font-semibold shadow-lg transition ease-out duration-500 transform hover:-translate-y-1 hover:scale-105">
                     Go to website
                 </a>
             </div>

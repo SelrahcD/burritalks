@@ -69,7 +69,14 @@
         {{ end }}
     </div>
 
-    <div class="flex-auto">{{ .Content }}</div>
+    <div class="flex-auto mb-10">{{ .Content }}</div>
+
+    {{ $related := .Site.RegularPages.Related . | first 3 }}
+    {{ with $related }}
+    <h3 class="text-2xl mb-4 text-red-600 font-bold">You might also be interested by</h3>
+        {{ partial "partials/talk_card_list.html" $related }}
+
+    {{ end }}
 
 </div>
 

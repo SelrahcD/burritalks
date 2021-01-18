@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alpinejs": "^2.8.0",
     "arg": "^5.0.0",
     "autoprefixer": "^10.1.0",
     "enquirer": "^2.3.6",

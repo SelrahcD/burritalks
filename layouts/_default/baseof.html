@@ -28,7 +28,8 @@
 <body class="flex flex-col h-full">
     <div class="border-t-4 border-red-600"></div>
 
-    <div x-data="{ open: false }" class="lg:container lg:mx-auto lg:flex items-center lg:border-b-4 pb-5 lg:py-4">
+
+    <div x-data="{ isOpen: false }" @keydown.escape="isOpen = false" class="lg:container lg:mx-auto lg:flex items-center lg:border-b-4 pb-5 lg:py-4">
         <div class="flex items-center justify-between px-4 py-2 lg:py-0 border-b lg:border-0">
             <div class="w-full lg:w-auto text-center">
                 <a href="/" class="tracking-tight">
@@ -38,20 +39,18 @@
                 </a>
             </div>
             <div class="lg:hidden">
-                <button aria-expanded="false" @click="open = true" class="text-red-500">
+                <button @click="isOpen = !isOpen" class="text-red-500">
                     <span class="sr-only">Open main menu</span>
-                    <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-
-                    <svg x-show="open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path x-show="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path x-show="isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
         </div>
 
-        <div x-show.transition="open" @click.away="open = false" class="text-center flex flex-col items-center lg:flex-row lg:space-x-2 border-b lg:border-0 pb-2 lg:pb-0">
+        <div class="flex lg:flex text-center flex-col items-center lg:flex-row lg:space-x-2 border-b lg:border-0 pb-2 lg:pb-0"
+             :class="{ 'block': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show.transition="true">
             <div><a href="/talks" class="inline-block lg:inline px-2 pt-4 pb-2 lg:pb-5 font-semibold border-b-4 border-transparent hover:text-red-500 hover:border-red-500 transition-color duration-500 ease-out">All talks</a></div>
             <div><a href="/tags" class="inline-block lg:inline pt-4 pb-2 lg:pb-5 font-semibold border-b-4 border-transparent hover:text-red-500 hover:border-red-500 transition-color duration-500 ease-out">Tags</a></div>
             <div><a href="/speakers" class="inline-block lg:inline px-2 pt-4 pb-2 lg:pb-5 font-semibold border-b-4 border-transparent hover:text-red-500 hover:border-red-500 transition-color duration-500 ease-out">Speakers</a></div>

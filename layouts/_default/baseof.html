@@ -24,6 +24,9 @@
     {{ $js := resources.Get "js/index.js" | js.Build }}
 
     <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
+    {{ if eq hugo.Environment "production" }}
+        <script async defer data-domain="burritalks.io" src="https://plausible.io/js/plausible.js"></script>
+    {{ end }}
 </head>
 <body class="flex flex-col h-full">
     <div class="border-t-4 border-red-600"></div>

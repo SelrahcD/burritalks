@@ -31171,6 +31171,11 @@ p {
           animation: bounce 1s infinite;
 }
 
+.speaker:not(:last-child):after
+{
+  content: ', ';
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

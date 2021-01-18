@@ -15,15 +15,13 @@
                 <h1 class="text-4xl inline mr-3 font-serif">{{ .Title }}</h1>
             </div>
 
-            <ul>
+            <div>
                 {{ range .Params.Speakers }}
-                <li>
                     <a href="{{ "/speakers/" | relLangURL }}{{ . | urlize }}" class="inline-block text-lg text-gray-700
                     border-b-4 border-transparent hover:border-red-500 focus:border-red-500 transition-color
-                    duration-500 ease-out">{{ . }}</a>
-                </li>
+                    duration-500 ease-out speaker">{{ . }}</a>
                 {{ end }}
-            </ul>
+            </div>
 
             <div class="mt-2">
                 {{ range .Params.Tags }}

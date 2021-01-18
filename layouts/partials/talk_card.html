@@ -7,10 +7,13 @@
          width="480" height="224">
     <div class="p-3">
         <span class="block text-xl">{{ .Title }}</span>
-        <div>
-            {{ range .Params.Speakers }}
-            <span class="mr-3 text-sm font-medium text-gray-700">{{ . }}</span>
-            {{ end }}
+        <div class="flex items-center justify-between">
+            <div>
+                {{ range .Params.Speakers }}
+                <span class="text-sm font-medium text-gray-700 speaker">{{ . }}</span>
+                {{ end }}
+            </div>
+
             <div class="text-gray-700 font-medium text-xs float-right">
                 <svg class="h-4 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />

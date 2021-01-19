@@ -7,7 +7,7 @@ title = "🌯 Burritalks"
 
 [params]
   description = "Burritalks is a list of hand picked talks about the software development, domain driven design, agile, constraint theory, and more!"
-  images = ["/images/logo.png"]
+  images = ["/images/logo-social.png"]
 
 
 [related]

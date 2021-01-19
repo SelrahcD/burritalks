@@ -1,7 +1,7 @@
 [build]
   context = "production"
   publish = "public"
-  command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+  command = "hugo --gc --minify -b https://www.burritalks.io"
 
 [context.production.environment]
   HUGO_VERSION = "0.80.0"

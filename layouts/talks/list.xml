@@ -1,0 +1,1 @@
+{{ partial "partials/talk_feed.xml" . }}

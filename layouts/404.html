@@ -10,4 +10,7 @@
         </div>
     </div>
 
+    {{ if eq hugo.Environment "production" }}
+    <script>plausible("404",{ props: { path: document.location.pathname } });</script>
+    {{ end }}
 {{ end }}

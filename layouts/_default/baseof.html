@@ -30,6 +30,7 @@
     <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
     {{ if eq hugo.Environment "production" }}
         <script async defer data-domain="burritalks.io" src="https://plausible.io/js/plausible.js"></script>
+        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     {{ end }}
 </head>
 <body class="flex flex-col h-full">

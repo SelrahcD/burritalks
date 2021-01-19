@@ -134,16 +134,16 @@ const downloadPreview = function (dirPath, talkData) {
 }
 
 const fromData = function(dataAsString) {
+    const dataOrder = ['url', 'title', 'speakers'];
+
     const dataAsArray = dataAsString.split('\n');
 
-    if (dataAsArray.length < 3)
-        throw "Data must have 3 lines"
+    let result = {};
+    for(let i = 0; i < dataOrder.length && i < dataAsArray.length; i++) {
+        result[dataOrder[i]] = dataAsArray[i];
+    }
 
-    return {
-      "url": dataAsArray[0],
-      "title": dataAsArray[1],
-      "speakers": [dataAsArray[2]],
-    };
+    return result;
 }
 
 const promptMissingData = function(talkData) {

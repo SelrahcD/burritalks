@@ -46,7 +46,9 @@ const promptQuestions = [
             'OOP',
             'Organization improvement',
             'PHP',
+            'Property based testing',
             'Rest',
+            'Serverless',
             'Testing'
         ]
     }

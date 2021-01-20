@@ -1,0 +1,38 @@
+---
+title: Contact
+layout: single
+---
+
+<p>
+    In case you would like to talk to us you can use the form below or reach <a href="https://twitter.com/burritalks">@burritalks</a>
+    or <a href="https://twitter.com/selrahcd">@SelrahcD</a> on Twitter.
+</p>
+
+<form action="/contact/success/" name="contact" method="POST" class="w-full lg:w-1/2 mx-auto mt-3"
+      data-netlify="true" netlify-honeypot="bot-field"
+>
+    <div class="hidden">
+        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+    </div>
+    <div>
+        <label for="email" class="block font-medium text-gray-700">
+            Your email:
+        </label>
+        <input type="email" name="email" id="email" placeholder="charles@test.com" required
+        class="my-1 border-gray-300 rounded-md w-full">
+        <p class="text-sm text-gray-700">We won't spam you, it's just for us to reply :)</p>
+    </div>
+
+    <div>
+        <label for="message" class="block font-medium text-gray-700">
+            Your message:
+        </label>
+    </div>
+    <textarea name="message" id="message" required
+        class="my-1 border-gray-300 rounded-md w-full h-40"></textarea>
+    <div class="text-right">
+        <button type="submit"
+                class="py-2 px-4 font-semibold rounded-lg text-white bg-red-500 hover:bg-red-900 focus:bg-red-900 shadow-lg transition ease-out duration-500 transform hover:-translate-y-1 hover:scale-105"
+        >Send!</button>
+    </div>
+</form>

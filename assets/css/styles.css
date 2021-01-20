@@ -12,3 +12,8 @@
 {
     content: ', ';
 }
+
+
+p > a {
+    @apply font-semibold text-red-500;
+}

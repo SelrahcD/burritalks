@@ -1,5 +1,3 @@
 ---
 layout: logo
 ---
-
-AAAAA

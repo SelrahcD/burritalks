@@ -18,6 +18,7 @@
     "enquirer": "^2.3.6",
     "esm": "^3.2.25",
     "get-youtube-id": "^1.0.1",
+    "listr": "^0.14.3",
     "nunjucks": "^3.2.2",
     "postcss": "^8.2.1",
     "postcss-cli": "^8.3.1",

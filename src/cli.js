@@ -4,6 +4,7 @@ const getYouTubeID = require('get-youtube-id');
 const fs = require('fs');
 const http = require('https');
 const superagent = require('superagent');
+const Listr = require('listr');
 
 
 const promptQuestions = [
@@ -95,9 +96,9 @@ const completeTalkData = function(talkData) {
     return {...talkData, ...calculatedData}
 };
 
-const getDirectoryPath = function (speakers, title) {
+const directoryNameForTalk = function (speakers, title) {
     const baseDirName = speakers.join('-') + ' ' + title;
-    return './content/talks/' + baseDirName
+    return baseDirName
         .replace(/\s+/g, '-')
         .toLowerCase();
 }
@@ -134,13 +135,17 @@ const downloadPreview = function (dirPath, talkData) {
 }
 
 const fromData = function(dataAsString) {
-    const dataOrder = ['url', 'title', 'speakers'];
+    const dataOrder = [
+        {name: 'url', transform: (x) => x},
+        {name: 'title', transform: (x) => x},
+        {name: 'speakers', transform: (x) => [x]}
+    ];
 
     const dataAsArray = dataAsString.split('\n');
 
     let result = {};
     for(let i = 0; i < dataOrder.length && i < dataAsArray.length; i++) {
-        result[dataOrder[i]] = dataAsArray[i];
+        result[dataOrder[i].name] = dataOrder[i].transform(dataAsArray[i]);
     }
 
     return result;
@@ -153,6 +158,10 @@ const promptMissingData = function(talkData) {
 
     return prompt(missingDataQuestions);
 };
+
+const talkDirectoryPath = function(talkDirectory) {
+    return './content/talks/' + talkDirectory;
+}
 
 export async function cli(args) {
 
@@ -168,14 +177,42 @@ export async function cli(args) {
 
     talkData = completeTalkData(talkData);
 
-    const indexMDContent = generateIndexMd(talkData);
+    const tasks = new Listr([
+        {
+            title: 'Creating the directory',
+            task: (ctx) => {
+                ctx.talkDirectoryName = directoryNameForTalk(ctx.talkData.speakers, ctx.talkData.title);
+                ctx.talkDirectoryPath = talkDirectoryPath(directoryNameForTalk(ctx.talkData.speakers, ctx.talkData.title));
+                createDir(ctx.talkDirectoryPath)
+            }
+        },
+        {
+            title: 'Downloading preview',
+            task: (ctx) => downloadPreview(ctx.talkDirectoryPath, ctx.talkData)
+        },
+        {
+            title: 'Writing index.md',
+            task: (ctx) => {
+                createIndexMd(ctx.talkDirectoryPath,  generateIndexMd(ctx.talkData))
+            }
+        },
+        {
+            title: 'Generating Tweet URL',
+            task: (ctx) => {
+                ctx.tweetURL = 'https://www.burritalks.com/' + ctx.talkDirectoryName;
+            }
+        }
+    ]);
 
-    const dirPath = getDirectoryPath(talkData.speakers, talkData.title);
+    tasks.run({
+            talkData: talkData,
+        })
+        .then(ctx => {
+            console.log('URL to use for Twitter: ' + ctx.tweetURL + '?utm_source=twitter&utm_medium=social&utm_campaign=first+tweet');
+        })
+        .catch(err => {
+        console.error(err);
+        });
 
-    createDir(dirPath);
-
-    downloadPreview(dirPath, talkData);
-
-    createIndexMd(dirPath, indexMDContent);
 }
 

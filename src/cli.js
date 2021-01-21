@@ -138,7 +138,7 @@ const fromData = function(dataAsString) {
     const dataOrder = [
         {name: 'url', transform: (x) => x},
         {name: 'title', transform: (x) => x},
-        {name: 'speakers', transform: (x) => [x]}
+        {name: 'speakers', transform: (x) => x.split(/\s?[,\-]\s?/)}
     ];
 
     const dataAsArray = dataAsString.split('\n');

@@ -5,6 +5,8 @@ const fs = require('fs');
 const http = require('https');
 const superagent = require('superagent');
 const Listr = require('listr');
+const execa = require('execa');
+const chalk = require('chalk');
 
 
 const promptQuestions = [
@@ -204,14 +206,44 @@ export async function cli(args) {
         }
     ]);
 
+    const commitWorkflow = async function(ctx) {
+        const shouldWeCommitQuestions = [
+            {
+                type: 'confirm',
+                name: 'createCommit',
+                message: 'Should we create the commit?'
+        }];
+
+        const answers = await prompt(shouldWeCommitQuestions)
+            .catch(console.error);
+
+        if(answers.createCommit) {
+            const commitMessage = '📺 ' + ctx.talkData.title + ' - ' + ctx.talkData.speakers.join(', ');
+
+            await execa('git', ['add', ctx.talkDirectoryPath]).stdout.pipe(process.stdout);
+            await execa('git', ['add', 'resources/_gen/images/talks/' + ctx.talkDirectoryName]).stdout.pipe(process.stdout);
+
+            await execa('git', ['commit', '-m', commitMessage]).stdout.pipe(process.stdout);
+
+            console.log(chalk.red(`
+A commit was created.
+You should add the description and ammend the commit with `
+            ) + chalk.red.bold('git commit --amend'));
+        }
+
+
+    }
+
     tasks.run({
             talkData: talkData,
         })
         .then(ctx => {
             console.log('URL to use for Twitter: ' + ctx.tweetURL + '?utm_source=twitter&utm_medium=social&utm_campaign=first+tweet');
+
+            commitWorkflow(ctx);
         })
         .catch(err => {
-        console.error(err);
+            console.error(err);
         });
 
 }

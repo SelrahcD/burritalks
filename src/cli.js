@@ -199,9 +199,13 @@ export async function cli(args) {
             }
         },
         {
-            title: 'Generating Tweet URL',
+            title: 'Generating Tweet',
             task: (ctx) => {
-                ctx.tweetURL = 'https://www.burritalks.com/' + ctx.talkDirectoryName;
+                const tweetURL = 'https://www.burritalks.io/talks/' + ctx.talkDirectoryName;
+
+                ctx.tweet = ctx.talkData.title + ' by ' + ctx.talkData.speakers.join(', ') + ' \n'
+                    + tweetURL + '?utm_source=twitter&utm_medium=social&utm_campaign=first+tweet';
+
             }
         }
     ]);
@@ -238,9 +242,13 @@ You should add the description and ammend the commit with `
             talkData: talkData,
         })
         .then(ctx => {
-            console.log('URL to use for Twitter: ' + ctx.tweetURL + '?utm_source=twitter&utm_medium=social&utm_campaign=first+tweet');
 
-            commitWorkflow(ctx);
+            (async () => {
+                await commitWorkflow(ctx);
+
+                console.log('Tweet: \n\n' + ctx.tweet);
+            })()
+
         })
         .catch(err => {
             console.error(err);

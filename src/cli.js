@@ -203,7 +203,7 @@ export async function cli(args) {
             task: (ctx) => {
                 const tweetURL = 'https://www.burritalks.io/talks/' + ctx.talkDirectoryName;
 
-                ctx.tweet = ctx.talkData.title + ' by ' + ctx.talkData.speakers.join(', ') + ' \n'
+                ctx.tweet = ctx.talkData.title + ' by ' + ctx.talkData.speakers.join(', ') + ' \n\n'
                     + tweetURL + '?utm_source=twitter&utm_medium=social&utm_campaign=first+tweet';
 
             }

@@ -136,7 +136,7 @@ const downloadPreview = function (dirPath, talkData) {
 
 }
 
-const fromData = function(dataAsString) {
+const readTalkDataFromParameter = function(dataAsString) {
     const dataOrder = [
         {name: 'url', transform: (x) => x},
         {name: 'title', transform: (x) => x},
@@ -172,7 +172,7 @@ export async function cli(args) {
     let talkData = {};
 
     if(commandArgs[0]) {
-        talkData = fromData(commandArgs[0])
+        talkData = readTalkDataFromParameter(commandArgs[0])
     }
 
     talkData = {...talkData, ...await promptMissingData(talkData)};
@@ -180,6 +180,10 @@ export async function cli(args) {
     talkData = completeTalkData(talkData);
 
     const tasks = new Listr([
+        {
+            title: 'Complete talk data',
+            task: (ctx) => ctx.talkData = completeTalkData(ctx.talkData)
+        },
         {
             title: 'Creating the directory',
             task: (ctx) => {

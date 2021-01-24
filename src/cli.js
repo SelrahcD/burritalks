@@ -208,7 +208,7 @@ export async function cli(args) {
                 const tweetURL = 'https://www.burritalks.io/talks/' + ctx.talkDirectoryName;
 
                 ctx.tweet = ctx.talkData.title + ' by ' + ctx.talkData.speakers.join(', ') + ' \n\n'
-                    + tweetURL + '?utm_source=twitter&utm_medium=social&utm_campaign=first+tweet';
+                    + tweetURL + '?utm_source=Twitter&utm_medium=social&utm_campaign=first+tweet';
 
             }
         }

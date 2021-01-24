@@ -6,7 +6,7 @@
          alt='Preview of {{ .Title }} by {{ delimit .Params.Speakers ", " ", and " }}'
          width="480" height="224">
     <div class="p-3">
-        <span class="block text-xl">{{ .Title }}</span>
+        <span class="block text-xl truncate" title="{{ .Title }}">{{ .Title }}</span>
         <div class="flex items-center justify-between">
             <div>
                 {{ range .Params.Speakers }}

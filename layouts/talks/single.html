@@ -67,7 +67,7 @@
         {{ end }}
     </div>
 
-    <div class="flex-auto mb-10">{{ .Content }}</div>
+    <div class="flex-auto mb-10 lg:w-1/2 mx-auto">{{ .Content }}</div>
 
     {{ $related := .Site.RegularPages.Related . | first 3 }}
     {{ with $related }}

@@ -103,7 +103,7 @@ const directoryNameForTalk = function (speakers, title) {
     const baseDirName = speakers.join('-') + ' ' + title;
     return baseDirName
         .replace(/\s+/g, '-')
-        .replace(/'/g, '')
+        .replace(/[',:]/g, '')
         .toLowerCase()
 }
 

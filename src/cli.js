@@ -40,6 +40,7 @@ const promptQuestions = [
             'API',
             'Architecture',
             'BDD',
+            'Databases',
             'DDD',
             'Development',
             'Elixir',

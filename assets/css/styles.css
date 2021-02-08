@@ -17,3 +17,10 @@
 p > a {
     @apply font-semibold text-red-500;
 }
+
+#mce-responses {
+    @apply mt-4;
+}
+#mce-error-response a {
+    @apply font-semibold text-red-500;
+}

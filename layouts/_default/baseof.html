@@ -23,7 +23,7 @@
     {{ $styles = $styles | minify }}
     {{ end }}
 
-    <link href="{{ $styles.Permalink }}" rel="stylesheet" />
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 
     {{ $js := resources.Get "js/index.js" | js.Build }}
 

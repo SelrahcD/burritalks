@@ -5,3 +5,6 @@ HUGO_EXEC=docker run --rm -it -v ${CURDIR}:/src -p ${PORT}:1313 klakegg/hugo:ext
 
 serve:
 	 ${HUGO_EXEC} serve --verbose
+
+install:
+	npm install

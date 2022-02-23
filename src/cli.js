@@ -7,6 +7,7 @@ const superagent = require('superagent');
 const Listr = require('listr');
 const execa = require('execa');
 const chalk = require('chalk');
+const Diacritics = require('diacritic');
 
 
 const promptQuestions = [
@@ -101,7 +102,7 @@ const completeTalkData = function(talkData) {
 
 const directoryNameForTalk = function (speakers, title) {
     const baseDirName = speakers.join('-') + ' ' + title;
-    return baseDirName
+    return Diacritics.clean(baseDirName)
         .replace(/\s+/g, '-')
         .replace(/[',:]/g, '')
         .toLowerCase()

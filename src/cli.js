@@ -45,6 +45,7 @@ const promptQuestions = [
             'DDD',
             'Development',
             'Elixir',
+            'Event Sourcing',
             'Javascript',
             'FP',
             'Micro-services',

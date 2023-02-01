@@ -1,5 +1,5 @@
 ---
-title: "Let&#39;s build event store in one hour!"
+title: "Let's build event store in one hour!"
 date: 2023-02-01T09:14:22.474Z
 speakers: [Oskar Dudycz]
 duration: 58min

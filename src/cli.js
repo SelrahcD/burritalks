@@ -47,6 +47,7 @@ const promptQuestions = [
             'Elixir',
             'Event Sourcing',
             'Javascript',
+            'Kanban',
             'FP',
             'Micro-services',
             'OOP',

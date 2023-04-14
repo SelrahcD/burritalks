@@ -13,7 +13,7 @@ tags:
 ---
 
 
-Sara Pellegrini lists multiple problems with the aggregate patterns, which one the most challenging tactical pattern to have a good grasp of because:
+Sara Pellegrini lists multiple problems with the aggregate patterns, which is one the most challenging tactical pattern to have a good grasp of because:
 
 - they do not fit storytelling
 - they put focus on the model instead of the behaviour

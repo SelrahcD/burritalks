@@ -6,6 +6,10 @@
     p {
         @apply mb-3;
     }
+
+    ul {
+        @apply mt-5 mb-5 list-disc list-inside;
+    }
 }
 
 .speaker:not(:last-child):after

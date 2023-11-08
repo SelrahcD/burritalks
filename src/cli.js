@@ -95,7 +95,7 @@ const completeTalkData = function(talkData) {
         calculatedData.youtube = getYouTubeID(talkData.url)
     }
 
-    if (/vimeo/.test(talkData.url)) {
+    if (/vimeo\.com/.test(talkData.url)) {
         calculatedData.vimeo = talkData.url.match(/vimeo.com\/([0-9]+)/)[1]
     }
 

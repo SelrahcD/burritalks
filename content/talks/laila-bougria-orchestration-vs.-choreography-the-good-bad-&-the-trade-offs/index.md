@@ -1,5 +1,5 @@
 ---
-title: "Orchestration vs. Choreography: The good, bad &amp; the trade-offs"
+title: "Orchestration vs. Choreography: The good, bad & the trade-offs"
 date: 2025-01-16T14:15:37.485Z
 speakers: [Laila Bougria]
 duration: 58min

@@ -37,6 +37,7 @@ const promptQuestions = [
         multiple: true,
         message: 'What tags should we use?',
         choices: [
+            'AI',
             'Agile',
             'API',
             'Architecture',

@@ -49,6 +49,7 @@ const promptQuestions = [
             'Event Sourcing',
             'Javascript',
             'Kanban',
+            'Life',
             'FP',
             'Micro-services',
             'OOP',

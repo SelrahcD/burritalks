@@ -3,6 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{ if .Params.description }}
+        <meta name="description" content="{{ .Params.description }}">
+    {{ else if .Summary }}
+        <meta name="description" content="{{ .Summary | plainify | truncate 155 }}">
+    {{ else if .Site.Params.description }}
+        <meta name="description" content="{{ .Site.Params.description }}">
+    {{ end }}
     {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
 
@@ -11,7 +19,11 @@
     {{ end -}}
 
     <title>{{ block "title" . }}
-        {{ .Site.Title }}
+        {{ if .IsHome }}
+            {{ .Site.Title }} - Curated Tech Talks on DDD, Architecture, Agile & More
+        {{ else }}
+            {{ .Title }} | {{ .Site.Title }}
+        {{ end }}
         {{ end }}</title>
 
 

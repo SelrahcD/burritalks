@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/charles/.config/superpowers/skills/skills/collaboration/brainstorming/**)",
+      "Bash(hugo:*)",
+      "Bash(test -f public/sitemap.xml)",
+      "Bash(test:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,6 +1,6 @@
 
 {{ define "title" }}
-{{ .Title }} &ndash; {{ .Site.Title }}
+{{ .Title }}{{ with .Params.Speakers }} by {{ index . 0 }}{{ end }} | {{ .Site.Title }}
 {{ end }}
 
 {{ define "main" }}
@@ -78,7 +78,35 @@
 
 </div>
 
-
-
+{{ if or .Params.youtube .Params.vimeo }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{ .Title }}",
+  "description": {{ if .Params.description }}"{{ .Params.description }}"{{ else if .Summary }}"{{ .Summary | plainify }}"{{ else }}"{{ .Content | plainify | truncate 200 }}"{{ end }},
+  "uploadDate": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  {{ if .Params.youtube }}
+  "thumbnailUrl": "https://img.youtube.com/vi/{{ .Params.youtube }}/maxresdefault.jpg",
+  "embedUrl": "https://www.youtube.com/embed/{{ .Params.youtube }}",
+  "contentUrl": "https://www.youtube.com/watch?v={{ .Params.youtube }}",
+  {{ else if .Params.vimeo }}
+  "embedUrl": "https://player.vimeo.com/video/{{ .Params.vimeo }}",
+  "contentUrl": "https://vimeo.com/{{ .Params.vimeo }}",
+  {{ end }}
+  {{ with .Params.Duration }}"duration": "PT{{ . }}",{{ end }}
+  {{ with .Params.Speakers }}
+  "creator": {
+    "@type": "Person",
+    "name": "{{ index . 0 }}"
+  },
+  {{ end }}
+  {{ with .Params.Tags }}
+  "keywords": "{{ delimit . ", " }}",
+  {{ end }}
+  "inLanguage": "en"
+}
+</script>
+{{ end }}
 
 {{ end }}

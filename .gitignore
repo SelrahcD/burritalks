@@ -2,3 +2,4 @@ public/
 node_modules/
 resources/
 .hugo_build.lock
+.worktrees/

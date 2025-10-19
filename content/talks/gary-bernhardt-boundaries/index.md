@@ -2,7 +2,7 @@
 title: "Boundaries"
 date: 2021-02-02T12:04:22.159Z
 speakers: [Gary Bernhardt]
-duration: 34min
+duration: PT34M
 draft: false
 link: https://www.destroyallsoftware.com/talks/boundaries
 tags:

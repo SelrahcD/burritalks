@@ -2,7 +2,7 @@
 title: "Context Maps - a deep dive"
 date: 2022-02-23T09:43:12.787Z
 speakers: [Michael Plöd]
-duration: 49min
+duration: PT49M
 draft: false
 link: https://www.youtube.com/watch\?v\=VjtMt689ql8
 youtube: VjtMt689ql8

@@ -2,7 +2,7 @@
 title: "REST and DDD"
 date: 2021-01-16T19:20:36.016Z
 speakers: [Jim Webber]
-duration: 59min
+duration: PT59M
 draft: false
 link: https://skillsmatter.com/skillscasts/2325-rest-and-ddd
 tags:

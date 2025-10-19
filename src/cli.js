@@ -68,7 +68,7 @@ const INDEX_MD_TEMPLATE =
 title: "{{ title }}"
 date: {{ date }}
 speakers: [{{ speakers | join(", ") }}]
-duration: {{ duration }}min
+duration: {{ duration }}
 draft: false
 link: {{ url }}
 {% if youtube -%}
@@ -99,6 +99,14 @@ const completeTalkData = function(talkData) {
 
     if (/vimeo\.com/.test(talkData.url)) {
         calculatedData.vimeo = talkData.url.match(/vimeo.com\/([0-9]+)/)[1]
+    }
+
+    // Convert duration from minutes to ISO 8601 format (PT#M)
+    if (talkData.duration) {
+        const minutes = parseInt(talkData.duration, 10);
+        if (!isNaN(minutes)) {
+            calculatedData.duration = `PT${minutes}M`;
+        }
     }
 
     return {...talkData, ...calculatedData}

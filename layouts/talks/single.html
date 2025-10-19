@@ -94,7 +94,7 @@
   "embedUrl": "https://player.vimeo.com/video/{{ .Params.vimeo }}",
   "contentUrl": "https://vimeo.com/{{ .Params.vimeo }}",
   {{ end }}
-  {{ with .Params.Duration }}"duration": "PT{{ . }}",{{ end }}
+  {{ with .Params.Duration }}"duration": "{{ . }}",{{ end }}
   {{ with .Params.Speakers }}
   "creator": {
     "@type": "Person",

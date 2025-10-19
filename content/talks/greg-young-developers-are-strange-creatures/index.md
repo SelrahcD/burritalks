@@ -2,7 +2,7 @@
 title: "Developers are strange creatures"
 date: 2021-01-25T18:06:33.243Z
 speakers: [Greg Young]
-duration: 31min
+duration: PT31M
 draft: false
 link: https://www.youtube.com/watch?v=N-lSE3DBerM
 youtube: N-lSE3DBerM

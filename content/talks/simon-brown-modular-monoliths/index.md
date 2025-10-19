@@ -2,7 +2,7 @@
 title: "Modular Monoliths"
 date: 2025-01-06T18:23:59.384Z
 speakers: [Simon Brown]
-duration: 47min
+duration: PT47M
 draft: false
 link: https://www.youtube.com/watch?v=5OjqD-ow8GE
 youtube: 5OjqD-ow8GE

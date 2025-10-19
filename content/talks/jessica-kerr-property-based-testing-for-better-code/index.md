@@ -2,7 +2,7 @@
 title: "Property-Based Testing for Better Code"
 date: 2021-01-19T14:55:53.930Z
 speakers: [Jessica Kerr]
-duration: 39min
+duration: PT39M
 draft: false
 link: https://www.youtube.com/watch?v=shngiiBfD80
 youtube: shngiiBfD80

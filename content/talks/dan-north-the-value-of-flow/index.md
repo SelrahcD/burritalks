@@ -2,7 +2,7 @@
 title: "The Value of Flow"
 date: 2022-08-09T12:23:21.373Z
 speakers: [Dan North]
-duration: 27min
+duration: PT27M
 draft: false
 link: https://www.youtube.com/watch\?v\=1aOItUyZ2wQ
 youtube: 1aOItUyZ2wQ

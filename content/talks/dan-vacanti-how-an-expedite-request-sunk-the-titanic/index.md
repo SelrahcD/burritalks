@@ -2,7 +2,7 @@
 title: "How An Expedite Request Sunk the Titanic"
 date: 2023-04-03T07:23:04.333Z
 speakers: [Dan Vacanti]
-duration: 58min
+duration: PT58M
 draft: false
 link: https://www.youtube.com/watch\?v\=VTWcA24EM6E
 youtube: VTWcA24EM6E

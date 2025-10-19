@@ -2,7 +2,7 @@
 title: "SWARMing: Scaling Without A Religious Methodology"
 date: 2021-01-16T16:42:49.862Z
 speakers: [Katherine Kirk, Dan North]
-duration: 41min
+duration: PT41M
 draft: false
 link: https://www.youtube.com/watch?v=q87wNNiygaM&amp;ab_channel=GOTOConferences
 youtube: q87wNNiygaM

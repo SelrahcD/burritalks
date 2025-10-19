@@ -1,7 +1,7 @@
 ---
 title: Nothing is something
 speakers: [Sandi Metz]
-duration: 36min
+duration: PT36M
 youtube: OMPfEXIlTVE
 link: https://www.youtube.com/watch?v=OMPfEXIlTVE&ab_channel=Confreaks
 draft: false

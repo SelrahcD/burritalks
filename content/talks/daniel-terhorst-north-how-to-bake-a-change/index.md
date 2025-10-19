@@ -2,7 +2,7 @@
 title: "How to bake a change"
 date: 2024-01-24T12:00:07.226Z
 speakers: [Daniel Terhorst-North]
-duration: 39min
+duration: PT39M
 draft: false
 link: https://www.youtube.com/watch?v=K0FFoAgjjY0
 youtube: K0FFoAgjjY0

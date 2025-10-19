@@ -2,7 +2,7 @@
 title: "Where AI Meets Code"
 date: 2025-03-22T10:45:11.853Z
 speakers: [Michael Feathers]
-duration: 45min
+duration: PT45M
 draft: false
 link: https://www.youtube.com/watch?v=g9m3R0NMJ1Y
 youtube: g9m3R0NMJ1Y

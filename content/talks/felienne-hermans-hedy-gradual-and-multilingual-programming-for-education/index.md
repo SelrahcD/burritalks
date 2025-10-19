@@ -2,7 +2,7 @@
 title: "Hedy, gradual and multilingual programming for education"
 date: 2023-11-08T10:45:46.544Z
 speakers: [Felienne Hermans]
-duration: 60min
+duration: PT60M
 draft: false
 link: https://vimeopro.com/newcrafts/newcrafts/video/842227947
 tags:

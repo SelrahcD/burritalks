@@ -2,7 +2,7 @@
 title: "Kill Aggregate!"
 date: 2023-04-14T10:31:43.284Z
 speakers: [Sara Pellegrini]
-duration: 50min
+duration: PT50M
 draft: false
 link: https://www.youtube.com/watch\?v\=DhhxKoOpJe0
 youtube: DhhxKoOpJe0

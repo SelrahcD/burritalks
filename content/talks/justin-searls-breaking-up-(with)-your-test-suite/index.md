@@ -2,7 +2,7 @@
 title: "Breaking up (with) your test suite"
 date: 2022-03-09T11:09:46.907Z
 speakers: [Justin Searls]
-duration: 47min
+duration: PT47M
 draft: false
 link: https://www.youtube.com/watch\?v\=9_3RsSvgRd4
 youtube: 9_3RsSvgRd4

@@ -2,7 +2,7 @@
 title: "Feature Injection"
 date: 2023-01-27T15:09:15.835Z
 speakers: [Chris Matts]
-duration: 28min
+duration: PT28M
 draft: false
 link: https://www.youtube.com/watch\?v\=hZdYR1fb4Gk
 youtube: hZdYR1fb4Gk

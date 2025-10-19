@@ -4,7 +4,11 @@
       "Read(//Users/charles/.config/superpowers/skills/skills/collaboration/brainstorming/**)",
       "Bash(hugo:*)",
       "Bash(test -f public/sitemap.xml)",
-      "Bash(test:*)"
+      "Bash(test:*)",
+      "Bash(find /Users/charles/Workspace/perso/burritalks/content/talks -name \"index.md\" -type f -exec sed -i '' 's/^duration: \\([0-9]\\+\\)min$/duration: PT\\1M/' {} ;)",
+      "Bash(for file in /Users/charles/Workspace/perso/burritalks/content/talks/*/index.md)",
+      "Bash(do sed -i '' 's/^duration: \\([0-9]*\\)min$/duration: PT\\1M/' \"$file\")",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

@@ -2,7 +2,7 @@
 title: "Orchestration vs. Choreography: The good, bad & the trade-offs"
 date: 2025-01-16T14:15:37.485Z
 speakers: [Laila Bougria]
-duration: 58min
+duration: PT58M
 draft: false
 link: https://www.youtube.com/watch&#92;?v&#92;=loTrersDovM
 youtube: loTrersDovM

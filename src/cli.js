@@ -180,7 +180,7 @@ const talkDirectoryPath = function(talkDirectory) {
     return './content/talks/' + talkDirectory;
 }
 
-export async function cli(args) {
+async function cli(args) {
 
     const commandArgs = args.slice(2);
 
@@ -274,4 +274,6 @@ You should add the description and ammend the commit with `
         });
 
 }
+
+module.exports.cli = cli;
 

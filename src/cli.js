@@ -237,16 +237,20 @@ async function cli(args) {
                 message: 'Should we create the commit?'
         }];
 
-        const answers = await prompt(shouldWeCommitQuestions)
-            .catch(console.error);
+        const answers = await prompt(shouldWeCommitQuestions);
 
         if(answers.createCommit) {
             const commitMessage = '📺 ' + ctx.talkData.title + ' - ' + ctx.talkData.speakers.join(', ');
 
-            await execa('git', ['add', ctx.talkDirectoryPath]).stdout.pipe(process.stdout);
-            await execa('git', ['add', 'resources/_gen/images/talks/' + ctx.talkDirectoryName]).stdout.pipe(process.stdout);
+            const runGit = async (args) => {
+                const child = execa('git', args);
+                child.stdout.pipe(process.stdout);
+                await child;
+            };
 
-            await execa('git', ['commit', '-m', commitMessage]).stdout.pipe(process.stdout);
+            await runGit(['add', ctx.talkDirectoryPath]);
+            await runGit(['add', 'resources/_gen/images/talks/' + ctx.talkDirectoryName]);
+            await runGit(['commit', '-m', commitMessage]);
 
             console.log(chalk.red(`
 A commit was created.
@@ -260,14 +264,9 @@ You should add the description and ammend the commit with `
     tasks.run({
             talkData: talkData,
         })
-        .then(ctx => {
-
-            (async () => {
-                await commitWorkflow(ctx);
-
-                console.log('Tweet: \n\n' + ctx.tweet);
-            })()
-
+        .then(async ctx => {
+            await commitWorkflow(ctx);
+            console.log('Tweet: \n\n' + ctx.tweet);
         })
         .catch(err => {
             console.error(err);

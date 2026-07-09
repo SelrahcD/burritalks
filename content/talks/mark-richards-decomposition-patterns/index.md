@@ -2,7 +2,7 @@
 title: "Decomposition Patterns"
 date: 2025-01-22T14:11:28.772Z
 speakers: [Mark Richards]
-duration: PT59M
+duration: 59m
 draft: false
 link: https://www.youtube.com/watch?v=wiWjX9yaXTY
 youtube: wiWjX9yaXTY

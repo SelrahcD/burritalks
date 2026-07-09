@@ -2,7 +2,7 @@
 title: "All our aggregates are wrong"
 date: 2025-06-14T06:20:11.812Z
 speakers: [Mauro Servienti]
-duration: PT58M
+duration: 58m
 draft: false
 link: https://www.youtube.com/watch?v=hev65ozmYPI
 youtube: hev65ozmYPI

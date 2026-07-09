@@ -2,7 +2,7 @@
 title: "Getting out of end-to-end testing jail"
 date: 2021-01-17T18:02:13.550Z
 speakers: [Konstantin Kudryashov]
-duration: PT40M
+duration: 40m
 draft: false
 link: https://skillsmatter.com/skillscasts/9142-a-talk-by-konstantin-kudryashov
 tags:

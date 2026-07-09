@@ -101,11 +101,10 @@ const completeTalkData = function(talkData) {
         calculatedData.vimeo = talkData.url.match(/vimeo.com\/([0-9]+)/)[1]
     }
 
-    // Convert duration from minutes to ISO 8601 format (PT#M)
     if (talkData.duration) {
         const minutes = parseInt(talkData.duration, 10);
         if (!isNaN(minutes)) {
-            calculatedData.duration = `PT${minutes}M`;
+            calculatedData.duration = `${minutes}m`;
         }
     }
 

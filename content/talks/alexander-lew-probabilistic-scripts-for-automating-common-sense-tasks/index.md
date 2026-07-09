@@ -2,7 +2,7 @@
 title: "Probabilistic scripts for automating common-sense tasks"
 date: 2021-01-24T18:14:29.352Z
 speakers: [Alexander Lew]
-duration: PT36M
+duration: 36m
 draft: false
 link: https://www.youtube.com/watch?v=MiiWzJE0fEA
 youtube: MiiWzJE0fEA

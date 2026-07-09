@@ -2,7 +2,7 @@
 title: "Growing a language"
 date: 2026-07-09T18:06:30.961Z
 speakers: [Guy Steel]
-duration: PT54M
+duration: 54m
 draft: false
 link: https://www.youtube.com/watch&#92;?v&#92;=_ahvzDzKdB0
 youtube: _ahvzDzKdB0

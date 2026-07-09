@@ -2,7 +2,7 @@
 title: "Reliable Messaging Without Distributed Transactions"
 date: 2021-01-19T17:56:48.424Z
 speakers: [Udi Dahan]
-duration: PT16M
+duration: 16m
 draft: false
 link: https://vimeo.com/111998645
 vimeo: 111998645

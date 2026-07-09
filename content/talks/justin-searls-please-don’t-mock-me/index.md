@@ -2,7 +2,7 @@
 title: "Please don’t mock me"
 date: 2022-03-28T09:25:13.660Z
 speakers: [Justin Searls]
-duration: PT52M
+duration: 52m
 draft: false
 link: https://www.youtube.com/watch?v=Af4M8GMoxi4
 youtube: Af4M8GMoxi4

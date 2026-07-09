@@ -2,7 +2,7 @@
 title: "Locknote: Confessions of an Imposter"
 date: 2025-04-14T11:55:14.531Z
 speakers: [Rendle]
-duration: PT53M
+duration: 53m
 draft: false
 link: https://www.youtube.com/watch?v=fL2poAw2cb0
 youtube: fL2poAw2cb0

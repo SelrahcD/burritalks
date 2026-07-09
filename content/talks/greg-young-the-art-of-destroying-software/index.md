@@ -2,7 +2,7 @@
 title: "The art of destroying software"
 date: 2021-01-16T18:23:08.488Z
 speakers: [Greg Young]
-duration: PT43M
+duration: 43m
 draft: false
 link: https://vimeo.com/108441214
 vimeo: 108441214

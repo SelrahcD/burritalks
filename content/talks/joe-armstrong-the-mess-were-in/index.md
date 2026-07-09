@@ -2,7 +2,7 @@
 title: "The Mess We're In"
 date: 2021-01-24T17:01:19.021Z
 speakers: [Joe Armstrong]
-duration: PT46M
+duration: 46m
 draft: false
 link: https://www.youtube.com/watch?v=lKXe3HUG2l4
 youtube: lKXe3HUG2l4

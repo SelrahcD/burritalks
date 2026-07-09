@@ -2,7 +2,7 @@
 title: "Dissecting Bounded Contexts"
 date: 2021-04-10T11:35:37.594Z
 speakers: [Nick Tune]
-duration: PT50M
+duration: 50m
 draft: false
 link: https://www.youtube.com/watch?v=zkRfDw0N4W8
 youtube: zkRfDw0N4W8

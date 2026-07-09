@@ -2,7 +2,7 @@
 title: "Systems Thinking by combining Team Topologies with Context Maps"
 date: 2025-01-16T14:29:05.730Z
 speakers: [Michael Plöd]
-duration: PT44M
+duration: 44m
 draft: false
 link: https://www.youtube.com/watch&#92;?v&#92;=eg0U21xs7c8
 youtube: eg0U21xs7c8

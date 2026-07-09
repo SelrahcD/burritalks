@@ -2,7 +2,7 @@
 title: "Building Multiplayer Games With LiveView"
 date: 2021-01-14T10:57:15Z
 speakers: [Dorian Karter]
-duration: PT30M
+duration: 30m
 draft: false
 link: https://www.youtube.com/watch?v=0UnLZlMr1Ug
 youtube: 0UnLZlMr1Ug

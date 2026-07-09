@@ -2,7 +2,7 @@
 title: "Transactions: myths, surprises and opportunities"
 date: 2021-02-03T08:55:58.312Z
 speakers: [Martin Kleppmann]
-duration: PT41M
+duration: 41m
 draft: false
 link: https://www.youtube.com/watch?v=5ZjhNTM8XU8
 youtube: 5ZjhNTM8XU8

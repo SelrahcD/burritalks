@@ -2,7 +2,7 @@
 title: "Every Event, Everywhere, All at Once"
 date: 2025-01-16T14:01:08.742Z
 speakers: [Jacqui Read]
-duration: PT56M
+duration: 56m
 draft: false
 link: https://www.youtube.com/watch&#92;?v&#92;=EVMPZe4V-ww
 youtube: EVMPZe4V-ww

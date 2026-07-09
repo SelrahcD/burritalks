@@ -1,0 +1,9 @@
+{{- $d := time.ParseDuration . -}}
+{{- $total := int $d.Minutes -}}
+{{- $h := div $total 60 -}}
+{{- $m := mod $total 60 -}}
+{{- $human := cond (gt $h 0) (printf "%dh %02dmin" $h $m) (printf "%dmin" $m) -}}
+{{- $iso := "PT" -}}
+{{- if gt $h 0 }}{{ $iso = printf "%s%dH" $iso $h }}{{ end -}}
+{{- if gt $m 0 }}{{ $iso = printf "%s%dM" $iso $m }}{{ end -}}
+{{- return dict "human" $human "iso" $iso -}}

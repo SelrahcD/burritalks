@@ -2,7 +2,7 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 speaker: []
-duration: PT45M
+duration: 45m
 draft: true
 link:
 youtube:

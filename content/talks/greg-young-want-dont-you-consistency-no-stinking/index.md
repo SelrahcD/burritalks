@@ -2,7 +2,7 @@
 title: "want don't You consistency no stinking"
 date: 2023-03-20T15:21:27.534Z
 speakers: [Greg Young]
-duration: PT40M
+duration: 40m
 draft: false
 link: https://www.youtube.com/watch\?v\=m1FhLPmiK9A
 youtube: m1FhLPmiK9A

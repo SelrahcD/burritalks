@@ -2,7 +2,7 @@
 title: "How serverless impacts design"
 date: 2021-01-19T15:36:17.436Z
 speakers: [Gojko Adzic]
-duration: PT55M
+duration: 55m
 draft: false
 link: https://www.youtube.com/watch?v=jZoWAQOaxt8
 youtube: jZoWAQOaxt8

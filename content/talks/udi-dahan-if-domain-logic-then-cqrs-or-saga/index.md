@@ -2,7 +2,7 @@
 title: "If (domain logic) then CQRS, or Saga?"
 date: 2021-07-29T06:08:47.939Z
 speakers: [Udi Dahan]
-duration: PT47M
+duration: 47m
 draft: false
 link: https://www.youtube.com/watch?v=fWU8ZK0Dmxs
 youtube: fWU8ZK0Dmxs

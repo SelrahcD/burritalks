@@ -2,7 +2,7 @@
 title: "Let's build event store in one hour!"
 date: 2023-02-01T09:14:22.474Z
 speakers: [Oskar Dudycz]
-duration: PT58M
+duration: 58m
 draft: false
 link: https://www.youtube.com/watch\?v\=gaoZdtQSOTo
 youtube: gaoZdtQSOTo

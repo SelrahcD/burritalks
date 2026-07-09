@@ -2,7 +2,7 @@
 title: "HTTP and Your Angry Dog"
 date: 2021-01-21T13:28:01.214Z
 speakers: [Ross Tuck]
-duration: PT52M
+duration: 52m
 draft: false
 link: https://www.youtube.com/watch?v=2qBaMsYXtJ4
 youtube: 2qBaMsYXtJ4

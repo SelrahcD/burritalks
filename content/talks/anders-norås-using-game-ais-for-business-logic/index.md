@@ -2,7 +2,7 @@
 title: "Using game AIs for Business Logic"
 date: 2021-01-15T16:29:32.571Z
 speakers: [Anders Norås]
-duration: PT9M
+duration: 9m
 draft: false
 link: https://vimeo.com/323915852
 vimeo: 323915852

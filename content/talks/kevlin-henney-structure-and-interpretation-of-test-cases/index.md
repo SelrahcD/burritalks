@@ -2,7 +2,7 @@
 title: "Structure and Interpretation of Test Cases"
 date: 2022-10-10T14:33:34.085Z
 speakers: [Kevlin Henney]
-duration: PT47M
+duration: 47m
 draft: false
 link: https://www.youtube.com/watch\?v\=MWsk1h8pv2Q
 youtube: MWsk1h8pv2Q

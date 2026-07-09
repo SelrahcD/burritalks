@@ -2,7 +2,7 @@
 title: "Infinitely Better UIs with Finite Automata"
 date: 2021-01-15T14:55:20.946Z
 speakers: [David Khourshid]
-duration: PT45M
+duration: 45m
 draft: false
 link: https://www.youtube.com/watch?v=VU1NKX6Qkxc&amp;ab_channel=ReactRally
 youtube: VU1NKX6Qkxc
